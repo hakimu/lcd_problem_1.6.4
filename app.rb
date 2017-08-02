@@ -1,10 +1,11 @@
 class Number
+
   def self.generate_3(size)
     input = [[" ","-"," "],
-            [" "," ","|"],
-            [" ","-"," "],
-            [" "," ","|"],
-            [" ","-"," "]]
+             [" "," ","|"],
+             [" ","-"," "],
+             [" "," ","|"],
+             [" ","-"," "]]
     output = []
     input.each do |row|
       if row.include?("-")
@@ -26,9 +27,7 @@ class Number
     output
   end
 
-
 end
-
 
 
 
