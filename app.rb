@@ -21,7 +21,12 @@ class Number
         end
         output << new_row
       elsif row.include?("|")
-        output << row
+        case size
+          when 1
+            output << row
+          else
+            output << row.unshift(" ") << row
+        end
       end
     end
     output
@@ -29,5 +34,5 @@ class Number
 
 end
 
-
+puts Number.generate_3(1)
 
