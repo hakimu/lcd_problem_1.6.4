@@ -1,38 +1,35 @@
 class Number
 
-  def self.generate_3(size)
-    input = [[" ","-"," "],
-             [" "," ","|"],
-             [" ","-"," "],
-             [" "," ","|"],
-             [" ","-"," "]]
-    output = []
-    input.each do |row|
-      if row.include?("-")
-        new_row = []
-        row.each do |element|
-          if element == " "
-            new_row << element
-          elsif element == "-"
-            size.times do
-              new_row << element
-            end
-          end
-        end
-        output << new_row
-      elsif row.include?("|")
-        case size
-          when 1
-            output << row
-          else
-            output << row.unshift(" ") << row
-        end
-      end
-    end
-    output
+  attr_accessor :output
+
+  def initialize
+    @output = []
+  end
+
+  def generate_3(size)
+
+    draw_horizontal_line(size)
+    draw_vertical_line(size)
+    draw_horizontal_line(size)
+    draw_vertical_line(size)
+    draw_horizontal_line(size)
+   
+    @output
+  end
+
+  def draw_horizontal_line(size)
+    @output << " #{'-'*size} "
+  end
+
+  def draw_vertical_line(size)
+    size.times {@output << "#{' '*(size+1)}|"}
+  end
+
+  def draw_double_verticle(size)
+    size.times {@output << " |#{' '*size}|"}
   end
 
 end
 
-puts Number.generate_3(1)
+
 
