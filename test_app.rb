@@ -54,7 +54,32 @@ class NumberTest < Minitest::Unit::TestCase
     assert_equal expected, number.output
   end
 
-
+  def test_draw_multiple_double_verticle
+    number_2 = Number.new
+    number_3 = Number.new
+    number_4 = Number.new
+    expected_2 = [
+      " |  |",
+      " |  |" 
+    ]
+    expected_3 = [
+      " |   |",
+      " |   |",
+      " |   |" 
+    ]
+    expected_4 = [
+      " |    |",
+      " |    |",
+      " |    |",
+      " |    |"
+    ]
+    number_2.draw_double_verticle(2)
+    number_3.draw_double_verticle(3)
+    number_4.draw_double_verticle(4)
+    assert_equal expected_2, number_2.output
+    assert_equal expected_3, number_3.output
+    assert_equal expected_4, number_4.output
+  end
 
 end
 
