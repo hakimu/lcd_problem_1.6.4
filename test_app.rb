@@ -81,6 +81,72 @@ class NumberTest < Minitest::Unit::TestCase
     assert_equal expected_4, number_4.output
   end
 
+  def test_generate_4_size_1
+    expected = [
+      "    ",
+      " | |",
+      "  - ",
+      "   |"  
+    ]
+    assert_equal expected, Number.new.generate_4(1)
+  end
+
+  def test_generate_4_size_2
+
+    expected = [
+      "     ",
+      " |  |",
+      " |  |",
+      "  -- ",
+      "    |",
+      "    |"  
+    ]
+    assert_equal expected, Number.new.generate_4(2)
+  end
+
+  def test_draw_line_of_space
+    number = Number.new
+    expected = ["    "]
+    number.draw_line_of_space(1)
+    assert_equal expected, number.output
+  end
+
+  def test_draw_horizontal_line
+    number = Number.new
+    expected = [
+      " - "
+    ]
+    number.draw_horizontal_line(1)
+    assert_equal expected, number.output
+  end
+
+  def test_draw_horizontal_line_four_size_1
+    number = Number.new
+    expected = [
+      "  - "
+    ]
+    number.draw_horizontal_line_four(1)
+    assert_equal expected, number.output
+  end
+
+  def test_draw_vertical_line_3
+    number = Number.new
+    expected = [
+      "  |"
+    ]
+    number.draw_vertical_line(1)
+    assert_equal expected, number.output
+  end
+
+  def test_draw_vertical_line_4
+    number = Number.new
+    expected = [
+      "   |"
+    ]
+    number.draw_vertical_line_four(1)
+    assert_equal expected, number.output
+  end
+
 end
 
   
