@@ -48,7 +48,7 @@ class NumberTest < Minitest::Unit::TestCase
   def test_draw_double_verticle
     number = Number.new
     expected = [
-      " | |"
+      "| |"
     ]
     number.draw_double_verticle(1)
     assert_equal expected, number.output
@@ -59,19 +59,19 @@ class NumberTest < Minitest::Unit::TestCase
     number_3 = Number.new
     number_4 = Number.new
     expected_2 = [
-      " |  |",
-      " |  |" 
+      "|  |",
+      "|  |" 
     ]
     expected_3 = [
-      " |   |",
-      " |   |",
-      " |   |" 
+      "|   |",
+      "|   |",
+      "|   |" 
     ]
     expected_4 = [
-      " |    |",
-      " |    |",
-      " |    |",
-      " |    |"
+      "|    |",
+      "|    |",
+      "|    |",
+      "|    |"
     ]
     number_2.draw_double_verticle(2)
     number_3.draw_double_verticle(3)
@@ -83,10 +83,11 @@ class NumberTest < Minitest::Unit::TestCase
 
   def test_generate_4_size_1
     expected = [
-      "    ",
-      " | |",
-      "  - ",
-      "   |"  
+      "   ",
+      "| |",
+      " - ",
+      "  |",
+      "   "  
     ]
     assert_equal expected, Number.new.generate_4(1)
   end
@@ -94,19 +95,20 @@ class NumberTest < Minitest::Unit::TestCase
   def test_generate_4_size_2
 
     expected = [
-      "     ",
-      " |  |",
-      " |  |",
-      "  -- ",
-      "    |",
-      "    |"  
+      "    ",
+      "|  |",
+      "|  |",
+      " -- ",
+      "   |",
+      "   |",
+      "    " 
     ]
     assert_equal expected, Number.new.generate_4(2)
   end
 
   def test_draw_line_of_space
     number = Number.new
-    expected = ["    "]
+    expected = ["   "]
     number.draw_line_of_space(1)
     assert_equal expected, number.output
   end
@@ -144,6 +146,26 @@ class NumberTest < Minitest::Unit::TestCase
       "   |"
     ]
     number.draw_vertical_line_four(1)
+    assert_equal expected, number.output
+  end
+
+  def test_generate_5_size_1
+    expected = [
+      " - ",
+      "|  ",
+      " - ",
+      "  |",
+      " - "
+    ]
+    assert_equal expected, Number.new.generate_5(1)
+  end
+
+  def test_draw_right_vertical
+    number = Number.new
+    expected = [
+      "  |"
+    ]
+    number.draw_right_vertical(1)
     assert_equal expected, number.output
   end
 
