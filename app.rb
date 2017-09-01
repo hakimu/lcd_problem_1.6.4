@@ -8,9 +8,9 @@ class Number
 
   def generate_3(size)
     draw_horizontal_line(size)
-    draw_vertical_line(size)
+    draw_right_vertical_line(size)
     draw_horizontal_line(size)
-    draw_vertical_line(size)
+    draw_right_vertical_line(size)
     draw_horizontal_line(size)
     @output
   end
@@ -19,7 +19,7 @@ class Number
    draw_line_of_space(size)
    draw_double_verticle(size)
    draw_horizontal_line(size)
-   draw_vertical_line(size)
+   draw_right_vertical_line(size)
    draw_line_of_space(size)
    @output
   end
@@ -28,12 +28,9 @@ class Number
     @output << " #{'-'*size} "
   end
 
-  def draw_vertical_line(size)
-  # def draw_right_vertical_line(size)
+  def draw_right_vertical_line(size)
     size.times {@output << "#{' '*(size+1)}|"}
   end
-
-  alias_method :draw_right_vertical, :draw_vertical_line
 
   def draw_left_vertical_line(size)
     size.times {@output << "|#{' '*(size+1)}"}
@@ -52,7 +49,7 @@ class Number
     @output << "  #{'-'*size} "
   end
 
-  def draw_vertical_line_four(size)
+  def draw_right_vertical_line_four(size)
     size.times {@output << " #{'  '*size}|"}
   end
 
@@ -60,7 +57,7 @@ class Number
     draw_horizontal_line(size)
     draw_left_vertical_line(size)
     draw_horizontal_line(size)
-    draw_vertical_line(size)
+    draw_right_vertical_line(size)
     draw_horizontal_line(size)
   end
 
