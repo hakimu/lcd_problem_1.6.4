@@ -6,6 +6,19 @@ class Number
     @output = []
   end
 
+  def generate(number,size)
+    send "generate_#{number}", size
+  end
+
+  def generate_2(size)
+    draw_horizontal_line(size)
+    draw_right_vertical_line(size)
+    draw_horizontal_line(size)
+    draw_left_vertical_line(size)
+    draw_horizontal_line(size)
+    @output
+  end
+
   def generate_3(size)
     draw_horizontal_line(size)
     draw_right_vertical_line(size)
@@ -22,6 +35,15 @@ class Number
    draw_right_vertical_line(size)
    draw_line_of_space(size)
    @output
+  end
+
+  def generate_5(size)
+    draw_horizontal_line(size)
+    draw_left_vertical_line(size)
+    draw_horizontal_line(size)
+    draw_right_vertical_line(size)
+    draw_horizontal_line(size)
+    @output
   end
 
   def draw_horizontal_line(size)
@@ -51,14 +73,6 @@ class Number
 
   def draw_right_vertical_line_four(size)
     size.times {@output << " #{'  '*size}|"}
-  end
-
-  def generate_5(size)
-    draw_horizontal_line(size)
-    draw_left_vertical_line(size)
-    draw_horizontal_line(size)
-    draw_right_vertical_line(size)
-    draw_horizontal_line(size)
   end
 
 end

@@ -151,6 +151,28 @@ class NumberTest < Minitest::Unit::TestCase
     assert_equal expected, number.output
   end
 
+  def test_generate_2_size_1
+    expected = [
+      " - ",
+      "  |",
+      " - ",
+      "|  ",
+      " - ",
+    ]
+    assert_equal expected, Number.new.generate_2(1)
+  end
+
+    def test_generate
+    expected = [
+      " - ",
+      "  |",
+      " - ",
+      "|  ",
+      " - ",
+    ]
+    assert_equal expected, Number.new.generate(2,1)
+  end
+
 end
 
   
