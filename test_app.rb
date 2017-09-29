@@ -1,10 +1,10 @@
 require 'minitest/autorun'
-require 'minitest/rg'
+# require 'minitest/rg'
 
 
 require_relative 'app'
 
-class NumberTest < Minitest::Unit::TestCase
+class NumberTest < Minitest::Test
 
   def test_generate_3_size_1
     expected = [
@@ -171,6 +171,19 @@ class NumberTest < Minitest::Unit::TestCase
       " - ",
     ]
     assert_equal expected, Number.new.generate(2,1)
+  end
+
+  def test_generate_2_size_2
+     expected = [
+      " -- ",
+      "   |",
+      "   |",
+      " -- ",
+      "|   ",
+      "|   ",
+      " -- ",
+    ]
+    assert_equal expected, Number.new.generate(2,2)
   end
 
 end
